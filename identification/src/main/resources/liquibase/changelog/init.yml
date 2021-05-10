@@ -1,0 +1,53 @@
+databaseChangeLog:
+- property:
+    name: now
+    value: NOW()
+    dbms: mysql
+- property:
+    name: uuid_type
+    value: varchar(50)
+    dbms: mysql
+- changeSet:
+    id: create-identification-table
+    author: Bryce
+    changes:
+    - createTable:
+        tableName: identification
+        columns:
+        - column:
+            name: id
+            type: ${uuid_type}
+            constraints:
+              primaryKey: true
+              nullable: false
+        - column:
+            name: first_name
+            type: varchar(50)
+            constraints:
+              nullable: false
+        - column:
+            name: last_name
+            type: varchar(50)
+            constraints:
+              nullable: false
+        - column:
+            name: date_of_birth
+            type: date
+            constraints:
+              nullable: false
+        - column:
+            name: gender
+            type: varchar(1)
+            constraints:
+               nullable: false
+        - column:
+            name: title
+            type: varchar(50)
+            constraints:
+              nullable: false
+        - column:
+            name: created_at
+            type: timestamp
+            defaultValue: ${now}
+            constraints:
+              nullable: false

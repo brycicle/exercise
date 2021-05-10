@@ -1,0 +1,49 @@
+version: '3.7'
+
+services:
+  auth-service:
+    image: bryce27923/auth:latest
+    mem_limit: 700m
+    ports:
+      - "8000:8000"
+    networks:
+      - exercise-network
+    depends_on:
+      - identification-service
+      - address-service
+      - communication-service
+
+  identification-service:
+    image: bryce27923/identification:latest
+    mem_limit: 700m
+    ports:
+      - "8001:8001"
+    networks:
+      - exercise-network
+
+  communication-service:
+    image: bryce27923/communication:latest
+    mem_limit: 700m
+    ports:
+      - "8003:8003"
+    networks:
+      - exercise-network
+
+  address-service:
+    image: bryce27923/address:latest
+    mem_limit: 700m
+    ports:
+      - "8002:8002"
+    networks:
+      - exercise-network
+
+  web-app-service:
+    image: bryce27923/web-exercise:latest
+    mem_limit: 2000m
+    ports:
+      - "4200:4200"
+    networks:
+      - exercise-network
+
+networks:
+  exercise-network:

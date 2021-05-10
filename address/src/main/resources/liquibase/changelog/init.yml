@@ -1,0 +1,68 @@
+databaseChangeLog:
+- property:
+    name: now
+    value: NOW()
+    dbms: mysql
+- property:
+    name: uuid_type
+    value: varchar(50)
+    dbms: mysql
+- changeSet:
+    id: create-address-table
+    author: Bryce
+    changes:
+    - createTable:
+        tableName: address
+        columns:
+        - column:
+            name: id
+            type: ${uuid_type}
+            constraints:
+              primaryKey: true
+              nullable: false
+        - column:
+            name: identification_id
+            type: ${uuid_type}
+            constraints:
+              nullable: false
+        - column:
+            name: typ
+            type: varchar(50)
+            constraints:
+              nullable: false
+        - column:
+            name: num
+            type: int(4)
+            constraints:
+              nullable: false
+        - column:
+            name: street
+            type: varchar(50)
+            constraints:
+              nullable: false
+        - column:
+            name: unit
+            type: varchar(50)
+            constraints:
+              nullable: false
+        - column:
+            name: city
+            type: varchar(50)
+            constraints:
+              nullable: false
+        - column:
+            name: state
+            type: varchar(50)
+            constraints:
+              nullable: false
+        - column:
+            name: zipcode
+            type: varchar(50)
+            constraints:
+              nullable: false
+        - column:
+            name: created_at
+            type: timestamp
+            defaultValue: ${now}
+            constraints:
+              nullable: false

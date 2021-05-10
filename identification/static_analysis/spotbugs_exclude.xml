@@ -1,0 +1,17 @@
+<FindBugsFilter><Match>
+        <Package name="~.*\.*dto"/>
+        <Bug pattern="EI_EXPOSE_REP2" />
+    </Match>
+    <Match>
+        <Package name="~.*\.*model"/>
+        <Bug pattern="EI_EXPOSE_REP" />
+    </Match>
+    <Match>
+        <Package name="~.*\.*model*"/>
+        <Bug pattern="EI_EXPOSE_REP2" />
+    </Match>
+    <Match>
+        <Package name="~.*\.*dto"/>
+        <Bug pattern="EI_EXPOSE_REP" />
+    </Match>
+</FindBugsFilter>

@@ -1,0 +1,32 @@
+databaseChangeLog:
+- property:
+    name: now
+    value: NOW()
+    dbms: mysql
+- property:
+    name: uuid_type
+    value: varchar(50)
+    dbms: mysql
+- changeSet:
+    id: create-account-table
+    author: Bryce
+    changes:
+    - createTable:
+        tableName: account
+        columns:
+        - column:
+            name: id
+            type: ${uuid_type}
+            constraints:
+              primaryKey: true
+              nullable: false
+        - column:
+            name: username
+            type: varchar(50)
+            constraints:
+              nullable: false
+        - column:
+            name: password
+            type: varchar(200)
+            constraints:
+              nullable: false

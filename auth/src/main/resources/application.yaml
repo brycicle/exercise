@@ -1,0 +1,54 @@
+info:
+  app:
+    description: '@project.description@'
+    email: bryce.deyto@gmail.com
+    name: '@project.artifactId@'
+    version: '@project.version@'
+
+# Server Configuration
+server:
+  port: 8000
+
+spring:
+  application:
+    name: auth
+  # JDBC Configuration
+  datasource:
+    url: jdbc:mysql://account-db.cnccjjbib2on.ap-southeast-1.rds.amazonaws.com:3306/account
+    username: admin
+    password: pass1234
+    platform: mysql
+    hikari:
+      max-lifetime: 9000
+  jpa:
+    hibernate:
+      ddl-auto: none
+  # Sleuth Configuration
+  sleuth:
+    sampler:
+      probability: 1
+  # Liquibase Configuration
+  liquibase:
+    change-log: classpath:liquibase/master.yml
+
+# Endpoint Configuration
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+
+jwt:
+  secret: exercise
+
+
+
