@@ -24,7 +24,7 @@
 # Services
 
 ### Auth/Gateway Service
-* [Swagger Docs](http://35.240.158.142:8000/swagger-ui/index.html)
+* [Swagger Docs](http://34.126.77.114:8000/swagger-ui/index.html)
 * [Docker Repository](https://hub.docker.com/repository/docker/bryce27923/auth)
 
 ### Identification Service
@@ -39,13 +39,9 @@
 * [Swagger Docs](http://34.87.173.62:8003/swagger-ui/index.html)
 * [Docker Repository](https://hub.docker.com/repository/docker/bryce27923/communication)
 
-### Communication Service
-* [Swagger Docs](http://34.87.173.62:8003/swagger-ui/index.html)
-* [Docker Repository](https://hub.docker.com/repository/docker/bryce27923/communication)
-
 ### Web Application
 * [Docker Repository](https://hub.docker.com/repository/docker/bryce27923/web-exercise)
-* [Live Server](http://34.126.77.114:4200/)
+* [Live Server](http://34.87.166.255:4200/)
 
 # Running the app
 ### Using Docker/Docker Compose
